@@ -1,0 +1,32 @@
+<!--pages/memberZ/memberZ.wxml-->
+<!-- 会员注册页面 -->
+<view class="member" bindtap="tabpayHide">
+  <view class="header-title"><text class="header-title-text">会员注册</text></view>
+  <view class="member-input">
+    <view class="member-input-list">
+      <text class="label">姓名</text><input type="text" class="input"/>
+    </view>
+    <view class="member-input-list">
+      <text class="label">身份证</text><input type="text" class="input"/>
+    </view>
+    <view class="member-input-list">
+      <text class="label">手机号</text><input type="text" class="input"/>
+    </view>
+    <view class="member-input-list">
+      <text class="label">返款账户</text>
+      <view class="member-pay">
+        <text class="member-pay-text" catchtap="tabPay">支付宝</text>
+        <view class="member-pay-list" hidden="{{payIsShow}}">
+          <text class="member-pay-list-1">支付宝</text>
+          <text class="member-pay-list-1">微信</text>
+          <text class="member-pay-list-1">银行卡</text>
+        </view>
+      </view>
+      <input type="text" class="member-pay-input"/>
+    </view>
+    
+  </view>
+  <view class="member-botton">
+    <button class="member-bt">注册</button>
+  </view>
+</view>

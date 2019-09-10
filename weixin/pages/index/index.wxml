@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="index">
+  <view class="header-title"><text class="header-title-text">美美社区</text></view>
+  <view class="index-swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+         style="width:{{bannerWidth}}px;height:{{bannerWidth*0.533}}px"
+         indicator-dots=true
+         indicator-active-color='#fff'
+        >
+        <block wx:for="{{imgUrls}}" :key='{{index}}'>
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" style="width:{{bannerWidth}}px;height:{{bannerWidth*0.533}}px"/>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <view class="index-list">
+    <view class="index-list-title"><text class="index-list-title-text">• 最新消息 •</text></view>
+    <view class="index-list-1">
+      <text class="index-list-list-ul">•</text>
+      <text class="index-list-list-title">美型医疗会员APP上线啦~一键成为会员 </text>
+      <text class="index-list-list-time"> 2019-8-25</text>
+    </view>
+    <view class="index-list-1">
+      <text class="index-list-list-ul">•</text>
+      <text class="index-list-list-title">美型医疗会员APP上线啦~一键成为会员 </text>
+      <text class="index-list-list-time"> 2019-8-25</text>
+    </view>
+    <view class="index-list-1">
+      <text class="index-list-list-ul">•</text>
+      <text class="index-list-list-title">美型医疗会员APP上线啦~一键成为会员 </text>
+      <text class="index-list-list-time"> 2019-8-25</text>
+    </view>
+  </view>
+
+  <view class="index-wdye" style="height:{{height-164-bannerWidth*0.533}}px">
+    <view class="index-wdye-title">
+      <text class="index-wdye-title-1"></text>
+      <text class="index-wdye-title-2">我的余额>></text>
+    </view>
+    
+    <view class="index-box">
+      <!-- 会员未注册状态开始 -->
+      <view class="index-wzc" 
+        style="height:{{(height-199-bannerWidth*0.533)*0.8}}px;width:{{(height-199-bannerWidth*0.533)*0.8}}px"
+       bindtap="toMemberZ"
+      >
+      <image 
+        src='../../img/huiyuanzuanshi.png' 
+        style="height:{{(height-199-bannerWidth*0.533)*0.32}}px;width:{{(height-199-bannerWidth*0.533)*0.32}}px;margin:5px auto 0;display:block"
+      >
+      </image>
+      <text class="index-wzc-text">一键申请会员</text>
+      </view>
+      <!-- 会员未注册状态结束 -->
+
+      <!-- 会员申请中开始 -->
+      <view class="index-hysqz"
+      style="height:{{(height-199-bannerWidth*0.533)*0.8}}px;width:{{(height-199-bannerWidth*0.533)*0.8}}px"
+      hidden="true"
+      >
+        <text class="index-hysqz-text" style="line-height:{{(height-199-bannerWidth*0.533)*0.8}}px;">会员申请中...</text>
+      </view>
+      <!-- 会员申请中结束 -->
+
+      <!-- 会员余额开始 -->
+      <view class="index-hyye"
+      style="height:120px;width:50%"
+      hidden="true"
+      >
+        <view class="index-hyye-list">
+          <text class="index-hyye-1">下期返额</text>
+          <text class="index-hyye-2">500元</text>
+        </view>
+        <view class="index-hyye-list">
+          <text class="index-hyye-1">剩余期数</text>
+          <text class="index-hyye-2">12期</text>
+        </view>
+        <view class="index-hyye-list">
+          <text class="index-hyye-1">剩余金额</text>
+          <text class="index-hyye-2">500元</text>
+        </view>
+      </view>
+      <!-- 会员余额结束 -->
+    </view>
+  </view>
+</view>

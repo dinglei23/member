@@ -1,0 +1,270 @@
+.contain-right-body{
+    height: 56px;
+    line-height: 56px;
+    text-indent: 20px;
+    background-color: #fff;
+}
+.contain-right-addMember{
+    height: 40px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+.contain-right-addMember button{
+    display: block;
+    width: 80px;
+    height: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #2DB261;
+}
+.contain-right-contain{
+    width: 98%;
+    height: calc(100% - 66px);
+    margin: 10px auto 0;
+    background-color: #fff;
+    border: 1px solid #999;
+    box-sizing: border-box;
+}
+.contain-right-list{
+    height: calc(100% - 38px);
+    overflow: auto;
+}
+.contain-right-title{
+    height: 38px;
+    background-color: #f2f2f2;
+}
+.contain-right-title ul li,.contain-right-list ul li{
+    height: 38px;
+    line-height: 38px;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+}
+.contain-right-list ul{
+    height: 38px;
+}
+.contain-right-list ul:hover{
+    background-color: #f2f2f2;
+}
+.contain-right-title ul li:last-child{
+    border-right: none !important;
+}
+/* .contain-right-title ul:last-child li{
+    border-bottom: none !important;
+} */
+.contain-right-title-1{
+    width: 5%;
+}
+.contain-right-title-2{
+    width: 10%;
+}
+.contain-right-title-3{
+    width: 8%;
+}
+.contain-right-title-4{
+    width: 13%;
+}
+.contain-right-title-5{
+    width: 8%;
+}
+.contain-right-title-6{
+    width: 10%;
+}
+.contain-right-title-7{
+    width: 10%;
+}
+.contain-right-title-8{
+    width: 7%;
+}
+.contain-right-title-9{
+    width: 10%;
+}
+.contain-right-title-10{
+    width: 8%;
+}
+.contain-right-title-11{
+    width: 10%;
+}
+.contain-right-title-12{
+    width: 11%
+}
+.contain-right-title-12 button{
+    display: block;
+    float: left;
+    width: 47%;
+    height: 28px;
+    margin-left: 2%;
+    cursor: pointer;
+    margin-top: 4px;
+    border-radius: 4px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.look{
+    background-color: #2DB261;
+    width: 80%;
+    height: 28px;
+    display: block;
+    margin: 4px auto 0;
+    border-radius: 4px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.updata{
+    background-color: #1E9FFF;
+}
+.delete{
+    background-color: #FF5722;
+}
+
+/* 编辑开始 */
+.updataInfo,.addInfo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.4);
+}
+.updataInfo-box,.addInfo-box{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.updataInfo-contain,.addInfo-contain{
+    position: absolute;
+    width: 600px;
+    height: 550px;
+    background-color: #fff;
+    top: calc((100% - 550px)/2);
+    left: calc((100% - 600px)/2);
+}
+.updataInfo-contain-title,.addInfo-contain-title{
+    height: 40px;
+    line-height: 40px;
+    background-color: #1E1E1E;
+    color: #fff;
+    text-indent: 10px;
+    font-size: 16px;
+}
+.updataInfo-contain-title span,.addInfo-contain-title span{
+    background:url(../img/close.png) no-repeat center center;
+    display: block;
+    height: 32px;
+    width: 32px;
+    float: right;
+    cursor: pointer;
+    margin-top: 4px;
+}
+.updataInfo-contain-title span:hover,.addInfo-contain-title span:hover{
+    background-color: #fff;
+}
+.updataInfo-contain ul,.addInfo-contain ul{
+    margin-top: 10px;
+}
+.updataInfo-contain ul li,.addInfo-contain ul li{
+    height: 40px;
+}
+.updataInfo-contain ul li label,.addInfo-contain ul li label{
+    display: block;
+    float: left;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.updataInfo-contain ul li input,.addInfo-contain ul li input{
+    display: block;
+    float: left;
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ededed;
+}
+.updataInfo-contain-info button,.addInfo-contain-info button{
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #2DB261;
+    display: block;
+    margin: 20px auto 0;
+    cursor: pointer;
+}
+/* 编辑结束 */
+
+/* 查看详情开始 */
+.lookInfo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.4);
+}
+.lookInfo-box{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.lookInfo-contain{
+    position: absolute;
+    width: 600px;
+    height: 430px;
+    background-color: #fff;
+    top: calc((100% - 430px)/2);
+    left: calc((100% - 600px)/2);
+}
+.lookInfo-contain-title{
+    height: 40px;
+    line-height: 40px;
+    background-color: #1E1E1E;
+    color: #fff;
+    text-indent: 10px;
+    font-size: 16px;
+}
+.lookInfo-contain-title span{
+    background:url(../img/close.png) no-repeat center center;
+    display: block;
+    height: 32px;
+    width: 32px;
+    float: right;
+    cursor: pointer;
+    margin-top: 4px;
+}
+.lookInfo-contain-title span:hover{
+    background-color: #fff;
+}
+.lookInfo-contain-list ul li{
+    height: 30px;
+    border-bottom: 1px solid #ededed;
+}
+.lookInfo-contain-list ul li label{
+    display: block;
+    width: 30%;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+}
+.lookInfo-contain-list ul li span{
+    display: block;
+    width: 70%;
+    float: left;
+    line-height: 30px;
+}
+/* 查看详情结束 */

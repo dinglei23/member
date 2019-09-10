@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/kefu/kefu",
+    "pages/user/user",
+    "pages/memberZ/memberZ",
+    "pages/login/login",
+    "pages/intermediary/intermediary"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "美美社区",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"./img/z.png",
+        "selectedIconPath":"./img/z-1.png"
+      },
+      {
+        "pagePath": "pages/kefu/kefu",
+        "text": "客服",
+        "iconPath": "./img/k.png",
+        "selectedIconPath": "./img/k-1.jpg"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "./img/g.png",
+        "selectedIconPath": "./img/g-1.png"
+      }
+    ],
+    "color":"#2F2F2F",
+    "selectedColor":"#1ABC9C"
+  },
+  "sitemapLocation": "sitemap.json"
+}

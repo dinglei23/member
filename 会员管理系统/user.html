@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/comment.css" />
+    <link rel="stylesheet" href="./css/user.css" />
+    <script src="./js/jquery.js"></script>
+    <script src="./js/comment.js"></script>
+    <script src="./js/user.js"></script>
+</head>
+<body>
+    <div class="contain-left">
+        <div class="contain-left-title">美星医疗会员管理系统</div>
+        <ul class="contain-left-list">
+            <li><a href="./user.html">用户管理</a></li>
+            <li><a href="./member.html">会员管理</a></li>
+            <li><a href="./intermediary.html">中介管理</a></li>
+        </ul>
+    </div>
+    <div class="contain-right">
+        <div class="contain-right-body">用户管理</div>
+        <div class="contain-right-addUser">
+            <button onclick="comment.openIndexAdd()">添加用户</button>
+        </div>
+        <div class="contain-right-contain">
+            <div class="contain-right-title">
+                <ul>
+                    <li class="contain-right-title-1">序号</li>
+                    <!-- <li class="contain-right-title-2">用户编号</li> -->
+                    <li class="contain-right-title-3">用户名</li>
+                    <li class="contain-right-title-4">密码</li>
+                    <li class="contain-right-title-5">用户状态</li>
+                    <li class="contain-right-title-9">是否合伙人</li>
+                    <li class="contain-right-title-6">微信</li>
+                    <li class="contain-right-title-7">注册时间</li>
+                    <li class="contain-right-title-8">操作</li>
+                </ul>
+            </div>
+            <div class="contain-right-list">
+                <!-- <ul>
+                    <li class="contain-right-title-1">1</li>
+                    <li class="contain-right-title-2">用户编号</li>
+                    <li class="contain-right-title-3">长不大的孩子</li>
+                    <li class="contain-right-title-4">628202xxx</li>
+                    <li class="contain-right-title-5">丁磊</li>
+                    <li class="contain-right-title-6">34262319930315425X</li>
+                    <li class="contain-right-title-7">13817764756</li>
+                    <li class="contain-right-title-8"><button class="updata"  onclick="comment.openUpdataInfo()">编辑</button><button class="delete">删除</button></li>
+                </ul> -->
+                
+            </div>
+        </div>
+        <!-- 用户编辑开始 -->
+        <div class="updataInfo" style="display:none">
+            <div class="updataInfo-box">
+                <div class="updataInfo-contain">
+                    <h2 class="updataInfo-contain-title">编辑用户信息<span onclick="comment.closeUpdataInfo()"></span></h2>
+                    <ul>
+                        <li><label>用户名</label><input type="text" class="updataInfo-contain-input updataInfo-yhm"/></li>
+                        <li><label>密码</label><input type="text" class="updataInfo-contain-input updataInfo-mm" /></li>
+                        <li><label>微信</label><input type="text" class="updataInfo-contain-input updataInfo-wx" /></li>
+                        <!-- <li><label>性别</label><input type="radio" name='sex'/>男<input type="radio" name='sex' />女</li> -->
+                    </ul>
+                    <div class="updataInfo-contain-info">
+                        <button class="undataUser">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 用户编辑结束 -->
+        <!-- 用户添加开始 -->
+        <div class="addInfo" style="display:none">
+            <div class="addInfo-box">
+                <div class="addInfo-contain">
+                    <h2 class="addInfo-contain-title">添加用户信息<span onclick="comment.closeIndexAdd()"></span></h2>
+                    <ul>
+                        <li><label>用户名</label><input type="text" class="addInfo-contain-input addInfo-yhm"/></li>
+                        <li><label>密码</label><input type="text" class="addInfo-contain-input addInfo-mm" /></li>
+                        <li><label>微信号</label><input type="text" class="addInfo-contain-input addInfo-wx" /></li>
+                        <!-- <li><label>性别</label><form method="get"><input type="radio" name='sex' value="0" />男<input type="radio" name='sex' value="1"/>女</form></li> -->
+                    </ul>
+                    <div class="addInfo-contain-info">
+                        <button class="add-bt">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 用户添加结束 -->
+        <!-- 弹框开始 -->
+        <!-- <div class="alert">
+            <div class="alert-box">
+                <div class="alert-box-contain">
+                    <h2>提示框<span class="alert-close"></span></h2>
+                    <div class="isdelete">
+                        确定删除吗？
+                    </div>
+                    <div class="alert-bt">
+                        <button class="alert-bt-1">确定</button>
+                        <button class="alert-bt-2">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- 弹框结束 -->
+    </div>
+    <script>
+        comment.scrollWidth('.contain-right-list','.contain-right-title');  //计算列表滚动条宽度
+        user.addUser();//注册用户请求
+        user.searchUserList();//请求查询用户
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!--index.wxml-->
+<!-- 个人中心 -->
+<view class="user" style="height:{{height}}px">
+  <view class="header-title"><text class="header-title-text">会员注册</text></view>
+  <view class="user-banner" 
+  style="width:{{bannerWidth}}px;height:{{bannerWidth*0.4}}px;background: url(../../img/user.jpg) no-repeat center center;background-size: 100% 100%;"
+  > 
+
+    <text class="zhangdan">账单</text>
+    
+    <view class="user-login" style="height:{{bannerWidth*0.2}}px">
+        <view class="userinfo">
+          <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+          <block wx:else>
+            <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          </block>
+        </view>
+        <!-- 未注册状态开始 -->
+        <view class="user-wzc" hidden="{{infoStorage?true:false}}">
+          <text bindtap="toLogin">登陆</text>
+          <text>/</text>
+          <text bindtap="toIntermediary">注册</text>
+          <text class="user-i">开启你的变美之旅</text>
+        </view>
+        <!-- 未注册结束 -->
+        <!-- 已注册开始 -->
+        <view class="user-ydl" hidden="{{!infoStorage?true:false}}">
+          <text class="user-ydl-1">{{userData.username}}</text>
+          <text class="user-ydl-1">欢迎光临</text>
+        </view>
+        <!-- 已注册结束 -->
+    </view>
+  </view>
+  <!-- 会员未注册开始 -->
+  <view class="user-info-wzc" style="height:{{height-bannerWidth*0.4-44}}px" 
+  hidden="{{((userData.isIntermediary==2)?true:(userData.idMember == 0)?false:true)}}">
+    <view class="user-info-wzc-box"  style="height:{{(height-bannerWidth*0.4-44)/2}}px;width:{{(height-bannerWidth*0.4-44)/2}}px">
+      <view class="user-info-wzc-son"  
+        style="height:{{(height-bannerWidth*0.4-44)/2-10}}px;width:{{(height-bannerWidth*0.4-44)/2-10}}px;"
+      >
+     
+      <!-- <view style="width:{{(height-bannerWidth*0.4-44)/2-10}}px;"> -->
+      <text style="display:block;width:96px;">您还不是会员申请会员注册</text>
+      <!-- </view> -->
+          
+      </view>
+    </view>
+    <view class="user-info-hyzc">
+      <text style="display:block">会员注册>></text>
+      <text style="display:block">合伙人申请>></text>
+    </view>
+  </view>
+  <!-- 会员未注册结束 -->
+
+  <!-- 会员信息开始 -->
+  <view class="user-info-hyxx" style="height:{{height-bannerWidth*0.4-44}}px" 
+  hidden="{{(userData.isIntermediary==2)?true:(userData.idMember == 2)?false:true}}"
+  >
+  >
+    <view class="user-info-hyxx-box"  style="height:{{(height-bannerWidth*0.4-44)/2}}px;width:{{(height-bannerWidth*0.4-44)/2}}px">
+      <view class="user-info-hyxx-son"  
+        style="height:{{(height-bannerWidth*0.4-44)/2-10}}px;width:{{(height-bannerWidth*0.4-44)/2-10}}px;"
+      >
+        <view class="user-info-hyxx-list">
+          <text class="user-info-hyxx-1">下期返额</text>
+          <text class="user-info-hyxx-2">500元</text>
+        </view>
+        <view class="user-info-hyxx-list">
+          <text class="user-info-hyxx-1">剩余期数</text>
+          <text class="user-info-hyxx-2">12期</text>
+        </view>
+        <view class="user-info-hyxx-list">
+          <text class="user-info-hyxx-1">剩余金额</text>
+          <text class="user-info-hyxx-2">500元</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 会员信息结束 -->
+
+  <!-- 合伙人信息开始 -->
+  <view class="user-hhr" style="height:{{height-bannerWidth*0.4-44}}px" 
+    hidden="{{(userData.isIntermediary==2)?false:true}}"
+  >
+    <view class="user-hhr-gr">
+      <view class="user-hhr-gr-title"><text class="user-hhr-gr-title-1"></text><text class="user-hhr-gr-title-2">我的资产</text></view>
+      <view class="user-hhr-gr-list">
+        <view class="user-hhr-gr-list-li">
+          <text class="user-hhr-gr-list-text-1">下期返额:</text>
+          <text class="user-hhr-gr-list-text-2">500元</text>
+        </view>
+        <view class="user-hhr-gr-list-li">
+          <text class="user-hhr-gr-list-text-1">名下会员:</text>
+          <text class="user-hhr-gr-list-text-2">10名</text>
+        </view>
+        <view class="user-hhr-gr-list-li">
+          <text class="user-hhr-gr-list-text-1">剩余期数:</text>
+          <text class="user-hhr-gr-list-text-2">10期</text>
+        </view>
+        <view class="user-hhr-gr-list-li">
+          <text class="user-hhr-gr-list-text-1">会员收入:</text>
+          <text class="user-hhr-gr-list-text-2">500元</text>
+        </view>
+        <view class="user-hhr-gr-list-li">
+          <text class="user-hhr-gr-list-text-1">剩余金额:</text>
+          <text class="user-hhr-gr-list-text-2">500元</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="user-hhr-wdhy">
+      <view class="user-hhr-gr-title"><text class="user-hhr-gr-title-1"></text><text class="user-hhr-gr-title-2">我的会员</text></view>
+      <view class="user-hhr-list-title">
+        <text class="user-hhr-list-title-1">姓名</text>
+        <text class="user-hhr-list-title-1">项目金额</text>
+        <text class="user-hhr-list-title-1">总期数</text>
+        <text class="user-hhr-list-title-1">产业提成</text>
+      </view>
+      <view class="user-hhr-list-list">
+        <view class="user-hhr-list-ul">
+          <text class="user-hhr-list-title-1">丁磊</text>
+          <text class="user-hhr-list-title-1">5000元</text>
+          <text class="user-hhr-list-title-1">12期</text>
+          <text class="user-hhr-list-title-1">3000元</text>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+  <!-- 合伙人信息结束 -->
+
+  <!-- 账单开始 -->
+  <view class="user-zd" style="height:{{height-bannerWidth*0.4-44}}px" hidden="true">
+      <view class="user-hhr-gr-title"><text class="user-hhr-gr-title-1"></text><text class="user-hhr-gr-title-2">我的账单</text></view>
+        <view class="user-hhr-list-title">
+          <text class="user-hhr-list-title-1">日期</text>
+          <text class="user-hhr-list-title-1">支付方式</text>
+          <text class="user-hhr-list-title-1">支付金额</text>
+          <text class="user-hhr-list-title-1">支付状态</text>
+        </view>
+        <view class="user-hhr-list-list">
+          <view class="user-hhr-list-ul">
+            <text class="user-hhr-list-title-1">2019-08-19</text>
+            <text class="user-hhr-list-title-1">支付报</text>
+            <text class="user-hhr-list-title-1">12期</text>
+            <text class="user-hhr-list-title-1">已完成</text>
+          </view>
+          
+        </view>
+  </view>
+  <!-- 账单结束 -->
+</view>

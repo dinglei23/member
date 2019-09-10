@@ -1,0 +1,17 @@
+<!--pages/memberZ/memberZ.wxml-->
+<!-- 用户注册页面 -->
+<view class="member" bindtap="tabpayHide">
+  <view class="header-title"><text class="header-title-text">用户注册</text></view>
+  <view class="member-input">
+    <view class="member-input-list">
+      <text class="label">用户名</text><input type="text" class="input" bindinput='getUserName'/>
+    </view>
+    <view class="member-input-list">
+      <text class="label">密码</text><input type="text" class="input" bindinput='getUserPass'/>
+    </view>
+    
+  </view>
+  <view class="member-botton">
+    <button class="member-bt" bindtap="intermediary">注册</button>
+  </view>
+</view>
