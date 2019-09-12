@@ -65,14 +65,14 @@
                 }
             })
         },
-        alert:function(){ //弹框
+        alert:function(text){ //弹框
             var str='';
             str+='<div class="alert">';
             str+='<div class="alert-box">';
             str+='<div class="alert-box-contain">';
             str+='<h2>提示框<span class="alert-close"></span></h2>';
             str+='<div class="isdelete">';
-            str+='确定删除吗？';
+            str+=''+text+'';
             str+='</div>';
             str+='<div class="alert-bt">';
             str+='<button class="alert-bt-1">确定</button>';

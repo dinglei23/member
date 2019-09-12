@@ -1,9 +1,10 @@
 var mongoose=require('mongoose');
 var moment = require("moment");
-mongoose.connect('mongodb://127.0.0.1:27017/user',{userNewUrlParser:true},function(err){
+mongoose.connect('mongodb://127.0.0.1:27017/member',{userNewUrlParser:true},function(err){
         console.log('用户数据库连接成功');
 });
 var time=moment().format("YYYY-MM-DD HH:mm:ss");
+var Schema=mongoose.Schema;
 var memberSchema=new mongoose.Schema({
         uid:{  //关联用户表id
             type:Schema.Types.ObjectId
@@ -40,6 +41,10 @@ var memberSchema=new mongoose.Schema({
             type:Number,
             default:0
         },
+        member_consumption_ye:{  //账户余额
+            type:Number,
+            default:0
+        },
         member_number:{  //返款总期数
             type:Number,
             default:0
@@ -51,6 +56,10 @@ var memberSchema=new mongoose.Schema({
         member_refunds:{  //下期返款金额
             type:Number,
             default:0
+        },
+        member_code:{  //邀请码
+            type:String,
+            require:true
         },
         register_time:{  //注册时间
             type:Date,

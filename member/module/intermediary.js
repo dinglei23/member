@@ -1,6 +1,6 @@
 var mongoose=require('mongoose');
 var moment = require("moment");
-mongoose.connect('mongodb://127.0.0.1:27017/intermediary',{userNewUrlParser:true},function(err){
+mongoose.connect('mongodb://127.0.0.1:27017/member',{userNewUrlParser:true},function(err){
         console.log('合伙人数据库连接成功');
 });
 var time=moment().format("YYYY-MM-DD HH:mm:ss");

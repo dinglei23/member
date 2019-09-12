@@ -17,13 +17,13 @@
         <ul class="contain-left-list">
             <li><a href="./user.html">用户管理</a></li>
             <li><a href="./member.html">会员管理</a></li>
-            <li><a href="./intermediary.html">中介管理</a></li>
+            <li><a href="./intermediary.html">合伙人管理</a></li>
         </ul>
     </div>
     <div class="contain-right">
-        <div class="contain-right-body">中介管理</div>
+        <div class="contain-right-body">合伙人管理</div>
         <div class="contain-right-addUser">
-            <button onclick="comment.openIndexAdd()">添加用户</button>
+            <button onclick="comment.openIndexAdd()">添加合伙人</button>
         </div>
         <div class="contain-right-contain">
             <div class="contain-right-title">
@@ -38,6 +38,7 @@
                     <li class="contain-right-title-8">总业绩余额</li>
                     <li class="contain-right-title-9">所属邀请码</li>
                     <li class="contain-right-title-10">申请时间</li>
+                    <li class="contain-right-title-13">合伙人申请</li>
                     <li class="contain-right-title-11">查看详情</li>
                     <li class="contain-right-title-12">操作</li>
                 </ul>
@@ -71,22 +72,16 @@
                     <h2 class="lookInfo-contain-title">合伙人详情信息<span onclick="comment.closeLookInfo()"></span></h2>
                     <div class="lookInfo-contain-list">
                         <ul>
-                            <li><label>姓名</label><span>丁磊</span></li>
-                            <li><label>身份证号码</label><span>34262319930315425X</span></li>
-                            <li><label>微信</label><span>13817764756</span></li>
-                            <li><label>消费项目</label><span>美容</span></li>
-                            <li><label>消费地址</label><span>上海市。。</span></li>
-                            <li><label>返款渠道</label><span>银行卡</span></li>
-                            <li><label>返款账号</label><span>643546344454456565443</span></li>
-                            <li><label>合伙人状态</label><span>合作</span></li>
-                            <li><label>会员总业绩</label><span>62222</span></li>
-                            <li><label>会员总余额</label><span>54444</span></li>
-                            <li><label>个人收入</label><span>5000</span></li>
-                            <li><label>个人消费金额(元)</label><span>2000</span></li>
-                            <li><label>个人总期数</label><span>12</span></li>
-                            <li><label>个人每月返额(元)</label><span>500</span></li>
-                            <li><label>个人剩余资金(元)</label><span>1500</span></li>
-                            <li><label>个人已返期数</label><span>6</span></li>
+                            <li><label>姓名</label><span class="infoname">丁磊</span></li>
+                            <li><label>身份证号码</label><span class="infoid">34262319930315425X</span></li>
+                            <li><label>微信</label><span class="infoweixin">13817764756</span></li>
+                            <li><label>返款渠道</label><span class="infoyhk">银行卡</span></li>
+                            <li><label>返款账号</label><span class="infozffs">643546344454456565443</span></li>
+                            <li><label>合伙人状态</label><span class="infostatus">合作</span></li>
+                            <li><label>会员总业绩</label><span class="infozyj">62222</span></li>
+                            <li><label>会员总余额</label><span class="infozyjye">54444</span></li>
+                            <li><label>个人收入</label><span class="infogrsr">5000</span></li>
+                            <li><label>邀请码</label><span class="infoyqm">5000</span></li>
                         </ul>
                     </div>
                 </div>
@@ -99,17 +94,14 @@
                 <div class="updataInfo-contain">
                     <h2 class="updataInfo-contain-title">编辑合伙人信息<span onclick="comment.closeUpdataInfo()"></span></h2>
                     <ul>
-                        <li><label>姓名</label><input type="text" /></li>
-                        <li><label>身份证号</label><input type="text" /></li>
-                        <li><label>微信</label><input type="text" /></li>
-                        <li><label>返款渠道</label><input type="text" /></li>
-                        <li><label>返款账号</label><input type="text" /></li>
-                        <li><label>合伙人状态</label><input type="text" /></li>
-                        
+                        <li><label>姓名</label><input type="text" class="updataname"/></li>
+                        <li><label>身份证号</label><input type="text" class="updataid"/></li>
+                        <li><label>微信</label><input type="text" class="updataweixin"/></li>
+                        <li><label>返款渠道</label><input type="text" class="updatafkqd"/></li>
+                        <li><label>返款账号</label><input type="text" class="updatafkzh"/></li>
                     </ul>
                     <div class="updataInfo-contain-info">
-                        <button>编辑</button>
-                        
+                        <button class="updatabt">编辑</button>
                     </div>
                 </div>
             </div>

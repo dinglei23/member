@@ -92,7 +92,7 @@
             });
             $('.delete').on('click',function(){ //点击删除用户
                 var _id=$(this).attr('uid');
-                comment.alert();
+                comment.alert('确定删除用户吗');
                 $('.alert-bt-1').on('click',function(){
                     comment.listAjax('http://localhost:3000/deleteUser',{_id:_id},function(data){
                     console.log(data)

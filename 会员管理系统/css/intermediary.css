@@ -46,6 +46,9 @@
     box-sizing: border-box;
     border-bottom: 1px solid #999;
     border-right: 1px solid #999;
+    overflow: hidden; 
+text-overflow: ellipsis; 
+white-space: nowrap;
 }
 .contain-right-list ul{
     height: 38px;
@@ -62,14 +65,14 @@
 .contain-right-title-1{
     width: 5%;
 }
-.contain-right-title-2{
+/* .contain-right-title-2{
     width: 10%;
-}
+} */
 .contain-right-title-3{
-    width: 8%;
+    width: 6%;
 }
 .contain-right-title-4{
-    width: 13%;
+    width: 8%;
 }
 .contain-right-title-5{
     width: 8%;
@@ -78,7 +81,7 @@
     width: 10%;
 }
 .contain-right-title-7{
-    width: 10%;
+    width: 7%;
 }
 .contain-right-title-8{
     width: 7%;
@@ -89,13 +92,16 @@
 .contain-right-title-10{
     width: 10%;
 }
+.contain-right-title-13{
+    width: 10%;
+}
 .contain-right-title-11{
     width: 10%;
 }
 .contain-right-title-12{
     width: 11%
 }
-.contain-right-title-12 button{
+.contain-right-title-12 button,.contain-right-title-13 button{
     display: block;
     float: left;
     width: 47%;
@@ -123,10 +129,10 @@
     cursor: pointer;
     font-weight: bold;
 }
-.updata{
+.updata,.agree{
     background-color: #1E9FFF;
 }
-.delete{
+.delete,.noagree{
     background-color: #FF5722;
 }
 
