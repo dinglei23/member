@@ -1,6 +1,6 @@
 // pages/intermediary/intermediary.js
 const app = getApp();
-var urlData ='http://localhost:3000';
+var urlData = app.url.url;
 Page({
 
   /**

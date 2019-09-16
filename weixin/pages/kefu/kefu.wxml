@@ -1,2 +1,13 @@
 <!--pages/kefu/kefu.wxml-->
-<text>pages/kefu/kefu.wxml</text>
+<view class="kefu">
+  <view class="kefu-list" wx:for='{{imgData}}'>
+    <view class="kefu-tx">
+      <image src="../../img/logo.png" class="kefu-tx-img"></image>
+    </view>
+    <view class="kefu-zhangdan">
+      <image src="{{url+item.imgUrl}}" class="kefu-zhangdan-img"></image>
+    </view>
+  </view>
+ 
+  
+</view>

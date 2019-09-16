@@ -19,17 +19,17 @@
     <view class="index-list-title"><text class="index-list-title-text">• 最新消息 •</text></view>
     <view class="index-list-1">
       <text class="index-list-list-ul">•</text>
-      <text class="index-list-list-title">美型医疗会员APP上线啦~一键成为会员 </text>
+      <text class="index-list-list-title">美美联盟会员APP上线啦~一键成为会员 </text>
       <text class="index-list-list-time"> 2019-8-25</text>
     </view>
     <view class="index-list-1">
       <text class="index-list-list-ul">•</text>
-      <text class="index-list-list-title">美型医疗会员APP上线啦~一键成为会员 </text>
+      <text class="index-list-list-title">美美联盟会员APP上线啦~一键成为会员 </text>
       <text class="index-list-list-time"> 2019-8-25</text>
     </view>
     <view class="index-list-1">
       <text class="index-list-list-ul">•</text>
-      <text class="index-list-list-title">美型医疗会员APP上线啦~一键成为会员 </text>
+      <text class="index-list-list-title">美美联盟会员APP上线啦~一键成为会员 </text>
       <text class="index-list-list-time"> 2019-8-25</text>
     </view>
   </view>
@@ -45,6 +45,7 @@
       <view class="index-wzc" 
         style="height:{{(height-199-bannerWidth*0.533)*0.8}}px;width:{{(height-199-bannerWidth*0.533)*0.8}}px"
        bindtap="toMemberZ"
+       hidden="{{infoStorage?(userData.idMember==0?false:true):false}}"
       >
       <image 
         src='../../img/huiyuanzuanshi.png' 
@@ -58,28 +59,37 @@
       <!-- 会员申请中开始 -->
       <view class="index-hysqz"
       style="height:{{(height-199-bannerWidth*0.533)*0.8}}px;width:{{(height-199-bannerWidth*0.533)*0.8}}px"
-      hidden="true"
+      hidden="{{infoStorage?(userData.idMember==1?false:true):true}}"
       >
         <text class="index-hysqz-text" style="line-height:{{(height-199-bannerWidth*0.533)*0.8}}px;">会员申请中...</text>
       </view>
       <!-- 会员申请中结束 -->
 
+      <!-- 会员申请被拒绝开始 -->
+      <view class="index-hysqz"
+      style="height:{{(height-199-bannerWidth*0.533)*0.8}}px;width:{{(height-199-bannerWidth*0.533)*0.8}}px"
+      hidden="{{infoStorage?(userData.idMember==3?false:true):true}}"
+      >
+        <text class="index-hysqz-text" style="line-height:{{(height-199-bannerWidth*0.533)*0.8}}px;">会员申请被拒绝</text>
+      </view>
+      <!-- 会员申请被拒绝结束 -->
+
       <!-- 会员余额开始 -->
       <view class="index-hyye"
       style="height:120px;width:50%"
-      hidden="true"
+      hidden="{{userData.idMember==2?false:true}}"
       >
         <view class="index-hyye-list">
           <text class="index-hyye-1">下期返额</text>
-          <text class="index-hyye-2">500元</text>
+          <text class="index-hyye-2">{{userData.Mlist[0].member_refunds}}元</text>
         </view>
         <view class="index-hyye-list">
           <text class="index-hyye-1">剩余期数</text>
-          <text class="index-hyye-2">12期</text>
+          <text class="index-hyye-2">{{userData.Mlist[0].member_num}}期</text>
         </view>
         <view class="index-hyye-list">
           <text class="index-hyye-1">剩余金额</text>
-          <text class="index-hyye-2">500元</text>
+          <text class="index-hyye-2">{{userData.Mlist[0].member_consumption_ye}}元</text>
         </view>
       </view>
       <!-- 会员余额结束 -->

@@ -1,6 +1,6 @@
 // pages/login/login.js
 const app = getApp();
-var urlData = 'http://localhost:3000';
+var urlData = app.url.url;
 Page({
 
   /**
@@ -22,7 +22,7 @@ Page({
       return false
     }
     app.getData(urlData + '/userLogin', this.getData(), function (data) {
-      console.log(data, data.data.result[0]._id,333)
+     
       if (data.data.status == "0") {
         wx.showToast({
           title: '用户登录成功',

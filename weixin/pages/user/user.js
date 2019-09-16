@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp();
-var urlData = 'http://localhost:3000';
+var urlData = app.url.url;
 
 Page({
   data: {
@@ -13,6 +13,7 @@ Page({
     height:0,//屏幕高度
     userData:{},//用户数据
     infoStorage: '',//缓存中的id
+    memberCount:0,//会员长度
   },
   //事件处理函数
   
@@ -22,18 +23,25 @@ Page({
     this.login();//用户登陆
   },
   login:function(){  //用户登陆
-    console.log(wx.getStorageSync('userId'),'ttt')
     var that=this
     if (wx.getStorageSync('userId')) {
-      app.getData(urlData + '/getUser', { _id: wx.getStorageSync('userId') }, function (data) {
-        console.log(data,111)
+      app.getData(urlData + '/getUser', { _id: wx.getStorageSync('userId') }, function (data) {  //用户登录
+       
         that.setData({
           userData: data.data[0],
           infoStorage: data.data[0]._id
-        })
+        });
+        if (data.data[0].isIntermediary == 2){//返回合伙人所有的会员信息
+          app.getData(urlData + '/memberCount', { code: data.data[0].Ilist[0].invitation_code }, function (result){
+      
+            that.setData({
+              memberCount: result.data
+            })
+          })
+        }
       })
     } else {
-      console.log(wx.getStorageSync('userId'),222)
+      // console.log(wx.getStorageSync('userId'),222)
     }
   },
   toIntermediary:function(){  //去用户注册页面
@@ -45,6 +53,33 @@ Page({
     wx.navigateTo({
       url: '../login/login'
     })
+  },
+  toMemberZ: function () {  //跳转到会员注册页面
+   
+    if (wx.getStorageSync('userId')) {
+      wx.navigateTo({
+        url: '../memberZ/memberZ'
+      });
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+  },
+  toHehuorenZ: function () { //跳转到合伙人注册页面
+    if (wx.getStorageSync('userId')) {
+      wx.navigateTo({
+        url: '../hehuoren/hehuoren'
+      });
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        duration: 2000
+      });
+    }
   },
   getSystem: function () { //获取屏幕信息
     var that = this;
@@ -64,7 +99,7 @@ Page({
     });
 
   },
-  getLogin:function(){
+  getLogin: function () {//获取用户登陆头像
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

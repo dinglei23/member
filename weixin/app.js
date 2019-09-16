@@ -36,6 +36,10 @@ App({
   globalData: {
     userInfo: null
   },
+  url:{
+    // url:'https://www.mmzhixing.com'
+    url: 'http://localhost:8000'
+  },
   getData:function(url,data,fn){ //ajax封装
     wx.request({
       url: url, //仅为示例，并非真实的接口地址

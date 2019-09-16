@@ -1,1 +1,32 @@
 /* pages/kefu/kefu.wxss */
+.kefu-list{
+  height: 100px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.kefu-tx{
+  width: 45px;
+  float: left;
+}
+.kefu-tx-name{
+  font-size: 12px;
+  color: #999;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}
+.kefu-tx-img{
+  height: 35px;
+  width: 35px;
+  border-radius: 4px;
+}
+.kefu-zhangdan{
+  height: 100px;
+  float: left;
+  width: calc(100% - 75px);
+}
+.kefu-zhangdan-img{
+  height: 100px;
+  max-width: calc(100% - 75px);
+}

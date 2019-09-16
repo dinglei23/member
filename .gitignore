@@ -1,5 +1,5 @@
 .DS_Store
-/member/node_modules
+/memberapi/node_modules
 /dist
 
 # local env files

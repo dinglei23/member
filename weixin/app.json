@@ -5,7 +5,8 @@
     "pages/user/user",
     "pages/memberZ/memberZ",
     "pages/login/login",
-    "pages/intermediary/intermediary"
+    "pages/intermediary/intermediary",
+    "pages/hehuoren/hehuoren"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,7 +24,7 @@
       },
       {
         "pagePath": "pages/kefu/kefu",
-        "text": "客服",
+        "text": "电子账单",
         "iconPath": "./img/k.png",
         "selectedIconPath": "./img/k-1.jpg"
       },

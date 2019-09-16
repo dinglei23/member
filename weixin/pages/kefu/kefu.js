@@ -1,20 +1,31 @@
 // pages/kefu/kefu.js
+const app = getApp();
+var urlData = app.url.url;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgData:[],//
+    url: urlData
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.imgData()
   },
-
+  imgData:function(){
+    var that=this;
+    app.getData(urlData + '/uploadImg', { _uid: wx.getStorageSync('userId')}, function (data) {
+     
+      that.setData({
+        imgData: data.data
+      })
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -26,7 +37,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.imgData()
   },
 
   /**

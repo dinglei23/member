@@ -1,0 +1,102 @@
+/* pages/memberZ/memberZ.wxss */
+.member{
+  height: 100%;
+  position: relative;
+}
+.header-title{
+  height: 44px;
+  background-color: #1ABC9C;
+}
+.header-title-text{
+  height: 44px;
+  display: block;
+  line-height: 44px;
+  text-align: center;
+  color: #fff;
+}
+.member-input-list{
+  height: 30px;
+  padding: 0 10%;
+  margin-top: 10px;
+}
+.label{
+  display: block;
+  height: 30px;
+  float: left;
+  width: 35%;
+  text-align: right;
+  line-height: 30px;
+  color: #1ABC9C;
+  font-size: 16px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.input{
+  display: block;
+  width: 65%;
+  height: 30px;
+  float: left;
+  border: 1px solid #1ABC9C;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.member-pay{
+  border: 1px solid #1ABC9C;
+  background-color: #1ABC9C;
+  color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 30px;
+  width: 25%;
+  float: left;
+  position: relative;
+}
+.member-pay-text{
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 14px;
+}
+.member-pay-list{
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  top: 28px;
+  left: -1px;
+  border: 1px solid #1ABC9C;
+}
+.member-pay-list-1{
+  height: 30px;
+  display: block;
+  line-height: 30px;
+  text-align: center;
+  color: #1ABC9C;
+  font-size: 14px;
+  border-bottom: 1px solid #1ABC9C;
+  box-sizing: border-box;
+}
+.member-pay-input{
+  border: 1px solid #1ABC9C;
+  border-radius: 4px;
+  height: 30px;
+  box-sizing: border-box;
+  width: 39%;
+  float: right;
+}
+.member-botton{
+  position: absolute;
+  bottom: 20px;
+  height: 30px;
+  width: 100%;
+}
+.member-bt{
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  width: 150px;
+  color: #fff;
+  background-color: #1ABC9C;
+  display: block;
+  margin: 0 auto;
+}

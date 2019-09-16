@@ -12,6 +12,6 @@
     
   </view>
   <view class="member-botton">
-    <button class="member-bt" bindtap="login">注册</button>
+    <button class="member-bt" bindtap="login">登录</button>
   </view>
 </view>

@@ -7,18 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    payIsShow:true,
-    
+    payIsShow: true,
     name: '',//姓名
     sid: '',//身份证
     weixin: '',//微信
-    xfxm: '',//消费项目
-    xfdz: '',//消费地址
-    xfje: 0,//消费金额
-    fkqs: 0,//返款期数
-    yqm:'',//邀请码
-    fkfs: '支付宝',//返款方式
-    fkzh: '',//返款账号
+    iphone: 0,//手机号
+    password: '',//申请密码
+    accountname: '支付宝',//返款方式
+    account: '',//收款账户
   },
 
   /**
@@ -27,13 +23,13 @@ Page({
   onLoad: function (options) {
 
   },
-  memberzhuce:function(){  //会员注册
-    if (!this.isData()){
+  hhrzhuce:function(){  //合伙人注册
+    if (!this.isData()) {
       return
     }
-    app.getData(urlData + '/addMember', this.getData(), function (data) {  //会员注册
+    app.getData(urlData + '/addIntermediary', this.getData(), function (data) {  //会员注册
       wx.showToast({
-        title: '会员注册成功',
+        title: '合伙人注册成功',
         icon: 'none',
         duration: 2000
       });
@@ -42,23 +38,20 @@ Page({
       })
     })
   },
-  getData:function(){  //获取会员注册参数
+  getData:function(){  //获取合伙人注册参数
     return{
       uid: wx.getStorageSync('userId'),//用户id
       name: this.data.name,//姓名
       sid: this.data.sid,//身份证
       weixin: this.data.weixin,//微信
-      xfxm: this.data.xfxm,//消费项目
-      xfdz: this.data.xfdz,//消费地址
-      xfje: this.data.xfje,//消费金额
-      fkqs: this.data.fkqs,//返款期数
-      yqm: this.data.yqm,//邀请码
-      fkfs: this.data.fkfs,//返款方式
-      fkzh: this.data.fkzh,//返款账号
+      iphone: this.data.iphone,//手机号
+      password: this.data.password,//申请密码
+      accountname: this.data.accountname,//返款方式
+      account: this.data.account,//收款账户
     }
   },
-  isData:function(){  //判断参数
-    if (!this.data.name){
+  isData: function () {//判断参数
+    if (!this.data.name) {
       wx.showToast({
         title: '姓名不能为空',
         icon: 'none',
@@ -85,51 +78,25 @@ Page({
       return false;
     }
 
-    if (!this.data.xfxm) {
+    if (this.data.password != 13127871827) {  //申请密码
       wx.showToast({
-        title: '消费项目不能为空',
+        title: '申请密码有误，请联系管理员',
         icon: 'none',
         duration: 2000
       });
       return false;
     }
 
-    if (!this.data.xfdz) {
+    if (!this.data.account) {
       wx.showToast({
-        title: '消费地址不能为空',
+        title: '收款账户不能为空',
         icon: 'none',
         duration: 2000
       });
       return false;
     }
 
-    if (!this.data.fkqs) {
-      wx.showToast({
-        title: '消费期数不能为空',
-        icon: 'none',
-        duration: 2000
-      });
-      return false;
-    }
-
-    if (!this.data.yqm) {
-      wx.showToast({
-        title: '邀请码不能为空',
-        icon: 'none',
-        duration: 2000
-      });
-      return false;
-    }
-
-    if (!this.data.fkzh) {
-      wx.showToast({
-        title: '返款账号不能为空',
-        icon: 'none',
-        duration: 2000
-      });
-      return false;
-    }
-      return true;
+    return true;
   },
   getname: function (e) {  //姓名
     this.setData({
@@ -146,62 +113,46 @@ Page({
       weixin: e.detail.value
     })
   },
-  getxfxm: function (e) {  //消费项目
+  getiphone: function (e) {  //手机号
     this.setData({
-      xfxm: e.detail.value
+      iphone: e.detail.value
     })
   },
-  getxfdz: function (e) {  //消费地址
+  getpass: function (e) {  //申请密码
     this.setData({
-      xfdz: e.detail.value
+      password: e.detail.value
     })
   },
-  getxfje: function (e) {  //消费金额
+  getfkzh: function (e) {  //付款账户
     this.setData({
-      xfje: e.detail.value
-    })
-  },
-  getfkqs: function (e) {  //返款期数
-    this.setData({
-      fkqs: e.detail.value
-    })
-  },
-  getyqm: function (e) {  //邀请码
-    this.setData({
-      yqm: e.detail.value
-    })
-  },
-  getfkzh: function (e) {  //返款账户
-    this.setData({
-      fkzh: e.detail.value
+      account: e.detail.value
     })
   },
   getzfb: function () {//支付宝支付方式
     this.setData({
-      fkfs: '支付宝'
+      accountname: '支付宝'
     })
   },
   getwx: function () {//微信支付方式
     this.setData({
-      fkfs: '微信'
+      accountname: '微信'
     })
   },
   getyhk: function () {//银行卡支付方式
     this.setData({
-      fkfs: '银行卡'
+      accountname: '银行卡'
     })
   },
-  tabPay:function(){  //银行卡方式下拉显示
+  tabPay: function () {  //支付方式下拉显示
     this.setData({
-      payIsShow:false
+      payIsShow: false
     })
   },
-  tabpayHide:function(){  //点击隐藏支付方式
+  tabpayHide: function () {  //点击隐藏支付方式
     this.setData({
       payIsShow: true
     })
   },
-  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
